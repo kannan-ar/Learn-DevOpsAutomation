@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "91ae0300-ae31-465e-93e9-83d2eea2ea34": {
+      "ProjectGuid": "91ae0300-ae31-465e-93e9-83d2eea2ea34",
+      "DisplayName": "LearnDevOps.Automation.Functions",
+      "ColorIndex": 0
+    },
+    "219de72e-64a4-4e30-a77d-437f6c2b1611": {
+      "ProjectGuid": "219de72e-64a4-4e30-a77d-437f6c2b1611",
+      "DisplayName": "LearnDevOps.Automation.Functions.Test",
+      "ColorIndex": 1
+    },
+    "a22deb71-6a63-4bd8-9b95-0af83a9328f1": {
+      "ProjectGuid": "a22deb71-6a63-4bd8-9b95-0af83a9328f1",
+      "DisplayName": "LearnDevOps.Automation.Functions.Test",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
