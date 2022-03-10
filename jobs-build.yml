@@ -1,0 +1,7 @@
+jobs:
+  - job: BuildUI
+    displayName: Build UI
+    pool:
+      vmImage: ubuntu-20.04
+    steps:
+    -  template: steps-build-ui.yml
