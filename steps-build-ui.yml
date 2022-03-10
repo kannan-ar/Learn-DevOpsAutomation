@@ -1,0 +1,12 @@
+steps:
+
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.16.3'
+    
+- task: Npm@1
+  displayName: Install NPM Packages
+  inputs:
+    command: 'ci'
+    workingDir: 'src/ui/dashboard'
+    verbose: 'false'
