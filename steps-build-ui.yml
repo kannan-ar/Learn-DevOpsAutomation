@@ -10,3 +10,40 @@ steps:
     command: 'ci'
     workingDir: 'src/ui/dashboard'
     verbose: 'false'
+
+- task: Npm@1
+  displayName: Build UI
+  inputs:
+    command: 'custom'
+    verbose: 'false'
+    workingDir: 'src/ui/dashboard'
+    customCommand: 'run build'
+    
+- task: Npm@1
+  displayName: Run Unit Tests
+  inputs:
+    command: 'custom'
+    verbose: 'true'
+    workingDir: 'src/ui/dashboard'
+    customCommand: 'run test:unit'
+    
+- task: PublishTestResults@2
+  displayName: Publish Unit Tests
+  condition: succeededOrFailed()
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'src/ui/dashboard/junit.xml'
+
+- task: ArchiveFiles@2
+  displayName: Create UI Zip File
+  inputs:
+    rootFolderOrFile: 'src/ui/dashboard/dist'
+    includeRootFolder: false
+    archiveFile: '$(Build.ArtifactsStagingDirectory)/Dashboard.zip'
+    
+- task: PublishBuildArtifacts@1
+  displayName: Publish Dashboard UI Zip File
+  inputs:
+    pathToPublish: '$(Build.ArtifactsStagingDirectory)/Dashboard.zip'
+    artifactName: drop
+    artifactType: container
